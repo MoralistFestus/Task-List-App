@@ -1,0 +1,108 @@
+body {
+  background-color: #333;
+}
+*,
+h1,
+button {
+  font-family: 'Nunito', sans-serif;
+}
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+.tasks {
+  width: 100%;
+  max-width: 45rem;
+  padding: 1em;
+  margin: 1em auto;
+  overflow: auto;
+  background-color: #fff;
+  box-shadow: 0px 0.25rem 1rem rgba(0,0,0,0.25);
+}
+.tasks__list {
+  clear: both;
+}
+.tasks__item {
+  margin-bottom: 0.5em;
+  position: relative;
+}
+.tasks__item__toggle {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 0.85em 2.25em 0.85em 1em;
+  background-color: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.tasks__item__toggle:hover {
+  background-color: rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.15);
+}
+.tasks__item__toggle--completed {
+  text-decoration: line-through;
+  background-color: rgba(0,128,0,0.15);
+  border-color: rgba(0,128,0,0.2);
+}
+.tasks__item__toggle--completed:hover {
+  background-color: rgba(0,128,0,0.25);
+  border-color: rgba(0,128,0,0.3);
+}
+.tasks__item__remove {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.tasks__item__remove i {
+  vertical-align: middle;
+}
+
+#newTodo{
+  width: 78%;
+  min-height: 45px;
+  position: relative;
+  padding: 5px;
+  border-radius: 3px;
+  background: #fff;
+  letter-spacing: 2px;
+  transition: all ease-in 0.3s;
+  border: 1px solid #bdcce6;
+}
+#newTodo .password {
+  width: 70%;
+  padding: 1.5em 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  word-wrap: break-word;
+}
+.allDone{
+  width: 100%;
+  float: right;
+}
+.remove {  float: right;}
+ul {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #333;
+}
+
+ul li {
+    padding: 12px 16px;
+    border-bottom: 1px solid #333;
+}
+
+ul li:last-child {
+    border-bottom: none
+}
+span {
+ font-weight: bold;
+}
