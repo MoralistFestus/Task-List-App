@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+      <link rel="stylesheet" href="fonts/font-awesome-4.3.0/css/font-awesome.css"/>  
+    <style>
+      .done {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+     <div class="container-fluid">
+     <div class="navbar-header">
+     <a class="navbar-brand" href="#">Task List App</a>
+   </div>
+ </div>
+  </nav><div><br><br>
+    <main id="app" class="container">
+      <h3>{{title}}</h3>
+      <form @submit.prevent="addTodo"> <!-- Handle form submission by preventing the page from reloading. e.preventDefault() -->
+        <label for="newTodo">Task List</label><br>
+        <input v-model="newTodo" type="text" placeholder="Enter Task name (Max: 25)" name="newTodo" id="newTodo" maxlength="25" value=""> <!-- form input to trigger todo -->
+        <button class="btn btn-primary btn-lg" type="submit" id="addTodo" name="button">&#x270d; Add</button>
+      </form><br>
+      <button @click="allDone" class="btn btn-success btn-lg allDone" type="button" name="button">Mark All &#x2714;</button><br><br><br>
+       <ul>
+        <li v-for="todo in todos"> <!-- vue directive to add todos -->
+          <input type="checkbox" v-model="todo.done">
+          <span :class="{ done: todo.done }"id="todoList">{{todo.title}}</span>
+          <button @click="removeTodo(todo)" id="remove"class="remove btn btn-danger" type="button" name="button"><i style="" class="fa">&#xf014;</i></button>
+        </li>
+      </ul>
+    </main>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <!-- Designed and Developed by Moralist Festus -->
+    <!-- Follow: https://twitter.com/moralistfestus -->
+    <!-- Portfolio: https://moralistdev.000webhostapp.com -->
+    <!-- Github Repo: https://github.com/programmerFestus -->
+    <!-- Please supports my projects and give a star on github. Follow up on twitter -->
+    <!-- Thanks -->
+  </body>
+</html>
